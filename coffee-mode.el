@@ -329,6 +329,9 @@ If FILENAME is omitted, the current buffer's file name is used."
 ;; Regular Expressions
 (defvar coffee-regexp-regexp "\\/\\(\\\\.\\|\\[\\(\\\\.\\|.\\)+?\\]\\|[^/]\\)+?\\/")
 
+;; Functions
+(defvar coffee-cs-function-regexp "\\s *\\([^ ]+\\)\\s *=\\s *\\(([^)]*)\\)?\\s *\\(->\\|=>\\)")
+
 ;; JavaScript Keywords
 (defvar coffee-js-keywords
       '("if" "else" "new" "return" "try" "catch"
@@ -367,6 +370,8 @@ If FILENAME is omitted, the current buffer's file name is used."
     (,coffee-assign-regexp . font-lock-type-face)
     (,coffee-regexp-regexp . font-lock-constant-face)
     (,coffee-boolean-regexp . font-lock-constant-face)
+    (,coffee-cs-function-regexp . (1 font-lock-function-name-face))
+    (,coffee-cs-function-regexp . (3 font-lock-function-name-face))
     (,coffee-keywords-regexp . font-lock-keyword-face)))
 
 ;;
